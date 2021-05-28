@@ -8,7 +8,7 @@ $(document).ready(function() {
     const city = $('#location').val();
     $('#location').val("");
     let request = new XMLHttpRequest();
-    const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=2cccab9853cd339f161002b2b6744fd3`;
+    const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.API_KEY}`;
     request.onreadystatechange = function() {
       if (this.readyState === 4 && this.status === 200) {
         const response = JSON.parse(this.responseText);
